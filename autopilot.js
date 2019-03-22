@@ -37,5 +37,11 @@ function get_gas_display(gas_amount) {
   return `${gas_amount}%`
 }
 
-impala = get_new_car();
-console.log(fill_up_gas(impala))
+function drive(car, city_distance) {
+  if (car['gas'] < city_distance) {
+    return fill_up_gas(car)
+  }
+  car['city'] = get_destination(car);
+  car['gas'] -= city_distance
+  return `Drove to ${car['city']}. Remaining gas: ${get_gas_display(car['gas'])}.`
+}
