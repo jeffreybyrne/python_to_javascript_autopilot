@@ -26,3 +26,16 @@ function get_destination(car) {
     return 'Toronto'
   }
 }
+
+function fill_up_gas(car) {
+  const old_gas = car['gas'];
+  car['gas'] = 100;
+  return `Filled up to ${get_gas_display(car['gas'])} on gas from ${get_gas_display(old_gas)}.`
+}
+
+function get_gas_display(gas_amount) {
+  return `${gas_amount}%`
+}
+
+impala = get_new_car();
+console.log(fill_up_gas(impala))
