@@ -67,3 +67,14 @@ function act(car) {
     }
   }
 }
+
+function command_fleet(cars) {
+  let i = 1;
+  cars.forEach(function(car) {
+    action = act(car);
+    console.log(`Car ${i}: ${action}`);
+    i++;
+  })
+
+  console.log('---')
+}
