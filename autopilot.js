@@ -78,3 +78,11 @@ function command_fleet(cars) {
 
   console.log('---')
 }
+
+function add_one_car_per_day(cars, num_days) {
+  for (day = 0; day < num_days; day++) {
+    new_car = get_new_car();
+    console.log(add_car(cars, new_car));
+    command_fleet(cars);
+  }
+}
