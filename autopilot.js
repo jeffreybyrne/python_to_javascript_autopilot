@@ -51,3 +51,19 @@ function drop_off_passengers(car) {
   car['passengers'] = 0;
   return `Dropped off ${previous_passengers}.`
 }
+
+function act(car) {
+  const distance_between_cities = 50;
+  if (car['gas'] < 20) {
+    return fill_up_gas(car)
+  } else if (car['passengers'] < 3) {
+    return pick_up_passenger(car)
+  } else {
+    if (car['gas'] < distance_between_cities) {
+      return fill_up_gas(car)
+    const drove_to = drive(car, distance_between_cities);
+    const passengers_dropped = drop_off_passengers(car);
+    return `${drove_to} ${passengers_dropped}`
+    }
+  }
+}
