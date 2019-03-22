@@ -16,3 +16,13 @@ function pick_up_passenger(car) {
   car['gas'] -= 10;
   return `Picked up passenger. Car now has ${car['passengers']} passengers.`
 }
+
+function get_destination(car) {
+  if (car['city'] == 'Toronto') {
+    return 'Mississauga';
+  } else if (car['city'] == 'Mississauga') {
+    return 'London'
+  } else if (car['city'] == 'London') {
+    return 'Toronto'
+  }
+}
