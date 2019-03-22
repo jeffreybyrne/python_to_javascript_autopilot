@@ -42,14 +42,14 @@ function drive(car, city_distance) {
     return fill_up_gas(car)
   }
   car['city'] = get_destination(car);
-  car['gas'] -= city_distance
+  car['gas'] -= city_distance;
   return `Drove to ${car['city']}. Remaining gas: ${get_gas_display(car['gas'])}.`
 }
 
 function drop_off_passengers(car) {
   const previous_passengers = car['passengers'];
   car['passengers'] = 0;
-  return `Dropped off ${previous_passengers}.`
+  return `Dropped off ${previous_passengers} passengers.`
 }
 
 function act(car) {
@@ -61,10 +61,10 @@ function act(car) {
   } else {
     if (car['gas'] < distance_between_cities) {
       return fill_up_gas(car)
+    }
     const drove_to = drive(car, distance_between_cities);
     const passengers_dropped = drop_off_passengers(car);
     return `${drove_to} ${passengers_dropped}`
-    }
   }
 }
 
@@ -86,3 +86,6 @@ function add_one_car_per_day(cars, num_days) {
     command_fleet(cars);
   }
 }
+
+let cars = []
+add_one_car_per_day(cars, 10);
