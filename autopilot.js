@@ -45,3 +45,9 @@ function drive(car, city_distance) {
   car['gas'] -= city_distance
   return `Drove to ${car['city']}. Remaining gas: ${get_gas_display(car['gas'])}.`
 }
+
+function drop_off_passengers(car) {
+  const previous_passengers = car['passengers'];
+  car['passengers'] = 0;
+  return `Dropped off ${previous_passengers}.`
+}
